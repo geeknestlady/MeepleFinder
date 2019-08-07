@@ -13,8 +13,10 @@ namespace MeepleFinder.Models
         public string LastName { get; set; }
         public int Age { get; set; }
         public string AboutMe { get; set; }
+
+        public int LocationId { get; set; }
         public Location Location { get; set; }
-        public Games Games { get; set; }
         
+        public List<GameRatings> GameRatings { get; set; }
     }
 }
