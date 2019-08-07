@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MeepleFinder.Models
 {
-    interface IModel
+    public interface IModel
     {
         int Id { get; set; }
     }
