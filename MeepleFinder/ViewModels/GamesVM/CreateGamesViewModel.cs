@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MeepleFinder.Data;
 using MeepleFinder.Models;
 
-namespace MeepleFinder.ViewModels.Games
+namespace MeepleFinder.ViewModels.GamesVM
 {
     public class CreateGamesViewModel
     {
@@ -21,7 +21,7 @@ namespace MeepleFinder.ViewModels.Games
 
         public CreateGamesViewModel() { }
 
-      
+
 
 
         public void Persist(RepositoryFactory repositoryFactory)
@@ -34,7 +34,7 @@ namespace MeepleFinder.ViewModels.Games
                 Categories = this.Categories,
                 Mechanism = this.Mechanism,
             };
-                      
+
             repositoryFactory.GetGamesRepository().Save(games);
         }
     }

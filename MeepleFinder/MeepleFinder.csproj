@@ -18,9 +18,9 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
-    <Folder Include="ViewModels\GameRatings\" />
-    <Folder Include="ViewModels\Location\" />
-    <Folder Include="ViewModels\Person\" />
+    <Folder Include="ViewModels\GameRatingsVM\" />
+    <Folder Include="ViewModels\LocationVM\" />
+    <Folder Include="ViewModels\PersonVM\" />
   </ItemGroup>
 
 </Project>

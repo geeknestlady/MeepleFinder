@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MeepleFinder.ViewModels.GamesVM.ListGamesViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="text-center">
+    <h1>MeepleFinder</h1>
+    <h3>View Games</h3>
+</div>
+
+
+<p>
+    <a asp-action="Create">Add Game</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlayTime)
+            </th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(item.Title, "Details", "Game", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayTime)
+                </td>
+            
+            </tr>
+        }
+    </tbody>
+</table>
+

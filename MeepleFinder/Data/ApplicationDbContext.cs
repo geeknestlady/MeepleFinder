@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MeepleFinder.Models;
-using MeepleFinder.ViewModels.Games;
+using MeepleFinder.ViewModels.GamesVM;
 
 namespace MeepleFinder.Data
 {

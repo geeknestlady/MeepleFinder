@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MeepleFinder.Data;
 using MeepleFinder.Models;
-using MeepleFinder.ViewModels.Games;
+using MeepleFinder.ViewModels.GamesVM;
 
 namespace MeepleFinder.Controllers
 {
@@ -21,7 +21,8 @@ namespace MeepleFinder.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<ListGamesViewModel> games = ListGamesViewModel.GetGames(repositoryFactory);
+            return View(games);
         }
 
         [HttpGet]
