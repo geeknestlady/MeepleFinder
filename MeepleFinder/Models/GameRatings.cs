@@ -12,7 +12,7 @@ namespace MeepleFinder.Models
         public bool PlayAgain { get; set; }
         public int Rating { get; set; }
         public int TimesPlayed { get; set; }
-        public Games Games { get; set; }
+        public virtual Games Games { get; set; }
 
         public int PersonId { get; set; }
         public int GameId { get; set; }

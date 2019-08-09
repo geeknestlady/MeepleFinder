@@ -35,11 +35,17 @@ namespace MeepleFinder
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseLazyLoadingProxies()
+                .UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
+            services.AddScoped<RepositoryFactory>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(
+               options => options.Stores.MaxLengthForKeys = 128)
+               .AddEntityFrameworkStores<ApplicationDbContext>()
+               .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

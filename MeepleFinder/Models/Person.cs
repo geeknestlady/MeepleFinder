@@ -15,8 +15,8 @@ namespace MeepleFinder.Models
         public string AboutMe { get; set; }
 
         public int LocationId { get; set; }
-        public Location Location { get; set; }
+        public virtual Location Location { get; set; }
         
-        public List<GameRatings> GameRatings { get; set; }
+        public virtual List<GameRatings> GameRatings { get; set; }
     }
 }

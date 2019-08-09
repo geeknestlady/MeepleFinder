@@ -10,9 +10,9 @@ namespace MeepleFinder.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public double Weight { get; set; }
-        public DateTime PlayTime { get; set; }
-        public List<Category> Categories { get; set; }
-        public List<Mechanism> Mechanism { get; set; }
+        public int PlayTime { get; set; }
+        public virtual List<Category> Categories { get; set; }
+        public virtual List<Mechanism> Mechanism { get; set; }
         
 
         public int PersonId { get; set; }

@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MeepleFinder.Models;
+using MeepleFinder.ViewModels.Games;
 
 namespace MeepleFinder.Data
 {
@@ -20,5 +21,7 @@ namespace MeepleFinder.Data
         {
 
         }
+
+        //public DbSet<MeepleFinder.ViewModels.Games.CreateGamesViewModel> CreateGamesViewModel { get; set; }
     }
 }
