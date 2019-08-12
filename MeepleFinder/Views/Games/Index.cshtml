@@ -30,18 +30,22 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.Title, "Details", "Game", new { id = item.Id })
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlayTime)
-                </td>
-            
-            </tr>
+        <tr>
+            <td>
+                @Html.ActionLink(item.Title, "Details", "Game", new { id = item.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlayTime)
+            </td>
+            <td>
+                
+                |@Html.ActionLink("Rate", "Create", "GameRatings", new { gameId = item.Id })|
+            </td>
+
+        </tr>
         }
     </tbody>
 </table>
