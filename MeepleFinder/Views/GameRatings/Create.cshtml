@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Your Rating for:</h1>
 
-<h4>CreateGameRatingsViewModel</h4>
+<h4>@Html.DisplayNameFor(model => model.GameTitle)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,7 +24,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
+                <select asp-for="Rating" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
                 <span asp-validation-for="Rating" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -33,13 +44,13 @@
                 <span asp-validation-for="TimesPlayed" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PersonId" class="control-label"></label>
-                <input asp-for="PersonId" class="form-control" />
+                <label asp-for="PersonId" class="control-label" hidden="hidden"></label>
+                <input readonly asp-for="PersonId" class="form-control" hidden="hidden" />
                 <span asp-validation-for="PersonId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="GameId" class="control-label"></label>
-                <input asp-for="GameId" class="form-control" />
+                <label asp-for="GameId" class="control-label" hidden="hidden"></label>
+                <input readonly asp-for="GameId" class="form-control" hidden="hidden" />
                 <span asp-validation-for="GameId" class="text-danger"></span>
             </div>
             <div class="form-group">

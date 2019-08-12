@@ -14,10 +14,25 @@ namespace MeepleFinder.ViewModels.GameRatingsVM
         public bool PlayAgain { get; set; }
         public int Rating { get; set; }
         public int TimesPlayed { get; set; }
+        public string GameTitle { get; set; }
         //public virtual Games Games { get; set; }
 
         public int PersonId { get; set; }
         public int GameId { get; set; }
+
+        public static CreateGameRatingsViewModel GetGameTitle(int gameId, RepositoryFactory repositoryFactory)
+        {
+            Games game = repositoryFactory.GetGamesRepository()
+                .GetById(gameId);
+
+            CreateGameRatingsViewModel gT = new CreateGameRatingsViewModel
+            {
+                GameTitle = game.Title,
+            };
+
+            return gT;           
+         
+        }
 
 
         internal void Persist(RepositoryFactory repositoryFactory)
