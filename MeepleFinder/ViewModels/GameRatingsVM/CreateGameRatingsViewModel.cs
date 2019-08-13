@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using MeepleFinder.Data;
@@ -10,9 +11,16 @@ namespace MeepleFinder.ViewModels.GameRatingsVM
     public class CreateGameRatingsViewModel
     {
         public int Id { get; set; }
-        public bool Ownership { get; set; }
+        [Display(Name = "I own this game.")]
+        public bool Ownership { get; set; } 
+
+        [Display(Name = "I would want to play this game again.")]
         public bool PlayAgain { get; set; }
+
+        [Display(Name = "My rating for the game.")]
         public int Rating { get; set; }
+
+        [Display(Name = "How many times I played this game.")]
         public int TimesPlayed { get; set; }
         public string GameTitle { get; set; }
         //public virtual Games Games { get; set; }
