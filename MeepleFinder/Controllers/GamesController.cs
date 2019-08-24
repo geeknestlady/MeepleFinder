@@ -41,6 +41,11 @@ namespace MeepleFinder.Controllers
             return RedirectToAction(actionName: nameof(Index));
         }
 
-        
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            DetailGameViewModel details = DetailGameViewModel.GetDetails(repositoryFactory, id);
+            return View(details);
+        }
     }
 }
