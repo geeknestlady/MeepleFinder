@@ -47,5 +47,19 @@ namespace MeepleFinder.Controllers
             DetailGameViewModel details = DetailGameViewModel.GetDetails(repositoryFactory, id);
             return View(details);
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            return View(new EditGamesViewModel(id));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, EditGamesViewModel game) 
+        {
+            
+            game.Update(id, repositoryFactory);
+            return RedirectToAction(actionName: nameof(Index));
+        }
     }
 }

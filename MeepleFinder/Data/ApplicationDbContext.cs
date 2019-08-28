@@ -27,6 +27,8 @@ namespace MeepleFinder.Data
 
         public DbSet<MeepleFinder.ViewModels.GamesVM.DetailGameViewModel> DetailGameViewModel { get; set; }
 
+        public DbSet<MeepleFinder.ViewModels.GamesVM.EditGamesViewModel> EditGamesViewModel { get; set; }
+
         //public DbSet<MeepleFinder.ViewModels.Games.CreateGamesViewModel> CreateGamesViewModel { get; set; }
     }
 }
